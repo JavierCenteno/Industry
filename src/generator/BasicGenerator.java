@@ -299,7 +299,10 @@ public class BasicGenerator implements Generator {
 		 *
 		 * the closer magma is to surface, the purer mineral deposits are
 		 *
-		 * REMEMBER, PLANTS CANNOT SPAWN IN A TILE WHERE A SOILTYPE EXISTS
+		 * REMEMBER, PLANTS CANNOT SPAWN IN A TILE WHERE A SOILTYPE EXISTS NOR ON SLOPED
+		 * TERRAIN
+		 *
+		 * REMEMBER, MINERALDEPOSITS AND SOILTYPES CANNOT SPAWN IN SLOPED TILES
 		 *
 		 * }
 		 *
