@@ -94,8 +94,8 @@ public class Policy extends TypeObject {
 	static {
 		ALL_POLICIES_MAP = new HashMap<>();
 		ALL_POLICIES_LIST = new ArrayList<>();
-		final Json i18n = Industry.I18N.get("typeObject", "policy");
-		final Json data = Industry.DATA.get("typeObject", "policy");
+		final Json i18n = Industry.I18N.get("typeObject", "policy", "list");
+		final Json data = Industry.DATA.get("typeObject", "policy", "list");
 		for (final String key : data.keys()) {
 			new Policy(key);
 		}

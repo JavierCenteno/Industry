@@ -326,7 +326,7 @@ public class Hospital extends Building implements PublicHealth {
 
 	static {
 		// i18n
-		final Json i18n = Industry.I18N.get("gameObject", "element", "building", "hospital");
+		final Json i18n = Industry.I18N.get("gameObject", "element", "building", "list", "hospital");
 		Hospital.NAME = i18n.get("name").as(String.class);
 		Hospital.DESCRIPTION = i18n.get("description").as(String.class);
 		HospitalWorkmode.MEDICAL_CENTER.name = i18n.get("workmodes", "medicalCenter", "name").as(String.class);
@@ -337,7 +337,7 @@ public class Hospital extends Building implements PublicHealth {
 		HospitalWorkmode.UNIVERSITY_HOSPITAL.description = i18n.get("workmodes", "universityHospital", "description")
 				.as(String.class);
 		// data
-		final Json data = Industry.DATA.get("gameObject", "element", "building", "hospital");
+		final Json data = Industry.DATA.get("gameObject", "element", "building", "list", "hospital");
 		Hospital.SIZE_X = data.get("sizeX").as(int.class);
 		Hospital.SIZE_Y = data.get("sizeY").as(int.class);
 		Hospital.MAX_ROUGHNESS = data.get("maxRoughness").as(int.class);

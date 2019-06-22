@@ -78,8 +78,8 @@ public class Era extends TypeObject {
 	static {
 		ALL_ERAS_MAP = new HashMap<>();
 		ALL_ERAS_LIST = new ArrayList<>();
-		final Json i18n = Industry.I18N.get("typeObject", "era");
-		final Json data = Industry.DATA.get("typeObject", "era");
+		final Json i18n = Industry.I18N.get("typeObject", "era", "list");
+		final Json data = Industry.DATA.get("typeObject", "era", "list");
 		for (final String key : data.keys()) {
 			final Era era = new Era(key);
 			era.name = i18n.get(key, "name").as(String.class);

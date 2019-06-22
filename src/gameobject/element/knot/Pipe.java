@@ -233,11 +233,11 @@ public class Pipe extends Knot {
 
 	static {
 		// i18n
-		final Json i18n = Industry.I18N.get("gameObject", "element", "knot", "pipe");
+		final Json i18n = Industry.I18N.get("gameObject", "element", "knot", "list", "pipe");
 		Pipe.NAME = i18n.get("name").as(String.class);
 		Pipe.DESCRIPTION = i18n.get("description").as(String.class);
 		// data
-		final Json data = Industry.DATA.get("gameObject", "element", "knot", "pipe");
+		final Json data = Industry.DATA.get("gameObject", "element", "knot", "list", "pipe");
 		Pipe.MAX_SLOPE = data.get("maxSlope").as(int.class);
 		Pipe.REQUIRED_TECHNOLOGY = Technology.getTechnology(data.get("requiredTechnology").as(String.class));
 		final Set<String> costKeys = data.get("cost").keys();

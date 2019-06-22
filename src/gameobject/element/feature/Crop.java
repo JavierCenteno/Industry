@@ -261,11 +261,11 @@ public class Crop extends Feature {
 
 	static {
 		// i18n
-		final Json i18n = Industry.I18N.get("gameObject", "element", "feature", "crop");
+		final Json i18n = Industry.I18N.get("gameObject", "element", "feature", "list", "crop");
 		Crop.NAME = i18n.get("name").as(String.class);
 		Crop.DESCRIPTION = i18n.get("description").as(String.class);
 		// data
-		final Json data = Industry.DATA.get("gameObject", "element", "feature", "crop");
+		final Json data = Industry.DATA.get("gameObject", "element", "feature", "list", "crop");
 		Crop.REQUIRED_TECHNOLOGY = Technology.getTechnology(data.get("requiredTechnology").as(String.class));
 		final Set<String> costKeys = data.get("cost").keys();
 		Crop.COST = new Amount[costKeys.size()];

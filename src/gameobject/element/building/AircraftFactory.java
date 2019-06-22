@@ -395,7 +395,7 @@ public class AircraftFactory extends Building implements Tertiary {
 
 	static {
 		// i18n
-		final Json i18n = Industry.I18N.get("gameObject", "element", "building", "aircraftFactory");
+		final Json i18n = Industry.I18N.get("gameObject", "element", "building", "list", "aircraftFactory");
 		AircraftFactory.NAME = i18n.get("name").as(String.class);
 		AircraftFactory.DESCRIPTION = i18n.get("description").as(String.class);
 		AssemblyLine.NAME = i18n.get("upgrades", "assemblyLine", "name").as(String.class);
@@ -403,7 +403,7 @@ public class AircraftFactory extends Building implements Tertiary {
 		AircraftFactoryWorkmode.DEFAULT.name = i18n.get("workmodes", "default", "name").as(String.class);
 		AircraftFactoryWorkmode.DEFAULT.description = i18n.get("workmodes", "default", "description").as(String.class);
 		// data
-		final Json data = Industry.DATA.get("gameObject", "element", "building", "aircraftFactory");
+		final Json data = Industry.DATA.get("gameObject", "element", "building", "list", "aircraftFactory");
 		AircraftFactory.SIZE_X = data.get("sizeX").as(int.class);
 		AircraftFactory.SIZE_Y = data.get("sizeY").as(int.class);
 		AircraftFactory.MAX_ROUGHNESS = data.get("maxRoughness").as(int.class);

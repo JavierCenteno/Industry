@@ -79,8 +79,8 @@ public class TerrainShape extends TypeObject {
 	static {
 		ALL_TERRAIN_SHAPES_MAP = new HashMap<>();
 		ALL_TERRAIN_SHAPES_LIST = new ArrayList<>();
-		final Json i18n = Industry.I18N.get("typeObject", "terrainShape");
-		final Json data = Industry.DATA.get("typeObject", "terrainShape");
+		final Json i18n = Industry.I18N.get("typeObject", "terrainShape", "list");
+		final Json data = Industry.DATA.get("typeObject", "terrainShape", "list");
 		for (final String key : data.keys()) {
 			final TerrainShape terrainShape = new TerrainShape(key);
 			terrainShape.name = i18n.get(key, "name").as(String.class);

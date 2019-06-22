@@ -121,8 +121,8 @@ public class Occupation extends TypeObject {
 	static {
 		ALL_OCCUPATIONS_MAP = new HashMap<>();
 		ALL_OCCUPATIONS_LIST = new ArrayList<>();
-		final Json i18n = Industry.I18N.get("typeObject", "occupation");
-		final Json data = Industry.DATA.get("typeObject", "occupation");
+		final Json i18n = Industry.I18N.get("typeObject", "occupation", "list");
+		final Json data = Industry.DATA.get("typeObject", "occupation", "list");
 		for (final String key : data.keys()) {
 			final Occupation occupation = new Occupation(key);
 			occupation.name = i18n.get(key, "name").as(String.class);

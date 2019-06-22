@@ -82,8 +82,8 @@ public class SoilType extends TypeObject {
 	static {
 		ALL_SOIL_TYPES_MAP = new HashMap<>();
 		ALL_SOIL_TYPES_LIST = new ArrayList<>();
-		final Json i18n = Industry.I18N.get("typeObject", "soilType");
-		final Json data = Industry.DATA.get("typeObject", "soilType");
+		final Json i18n = Industry.I18N.get("typeObject", "soilType", "list");
+		final Json data = Industry.DATA.get("typeObject", "soilType", "list");
 		for (final String key : data.keys()) {
 			final SoilType soilType = new SoilType(key);
 			soilType.name = i18n.get(key, "name").as(String.class);

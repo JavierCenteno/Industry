@@ -99,8 +99,8 @@ public class Technology extends TypeObject {
 	static {
 		ALL_TECHNOLOGIES_MAP = new HashMap<>();
 		ALL_TECHNOLOGIES_LIST = new ArrayList<>();
-		final Json i18n = Industry.I18N.get("typeObject", "technology");
-		final Json data = Industry.DATA.get("typeObject", "technology");
+		final Json i18n = Industry.I18N.get("typeObject", "technology", "list");
+		final Json data = Industry.DATA.get("typeObject", "technology", "list");
 		// Initialize technologies
 		for (final String key : data.keys()) {
 			new Technology(key);

@@ -578,7 +578,7 @@ public class Farm extends Building implements Primary {
 
 	static {
 		// i18n
-		final Json i18n = Industry.I18N.get("gameObject", "element", "building", "farm");
+		final Json i18n = Industry.I18N.get("gameObject", "element", "building", "list", "farm");
 		Farm.NAME = i18n.get("name").as(String.class);
 		Farm.DESCRIPTION = i18n.get("description").as(String.class);
 		Greenhouses.NAME = i18n.get("upgrades", "greenhouses", "name").as(String.class);
@@ -592,7 +592,7 @@ public class Farm extends Building implements Primary {
 		FarmWorkmode.FERTILIZER.name = i18n.get("workmodes", "fertilizer", "name").as(String.class);
 		FarmWorkmode.FERTILIZER.description = i18n.get("workmodes", "fertilizer", "description").as(String.class);
 		// data
-		final Json data = Industry.DATA.get("gameObject", "element", "building", "farm");
+		final Json data = Industry.DATA.get("gameObject", "element", "building", "list", "farm");
 		Farm.SIZE_X = data.get("sizeX").as(int.class);
 		Farm.SIZE_Y = data.get("sizeY").as(int.class);
 		Farm.MAX_ROUGHNESS = data.get("maxRoughness").as(int.class);

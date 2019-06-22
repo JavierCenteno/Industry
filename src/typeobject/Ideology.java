@@ -189,8 +189,8 @@ public class Ideology extends TypeObject {
 	static {
 		ALL_IDEOLOGIES_MAP = new HashMap<>();
 		ALL_IDEOLOGIES_LIST = new ArrayList<>();
-		final Json i18n = Industry.I18N.get("typeObject", "ideology");
-		final Json data = Industry.DATA.get("typeObject", "ideology");
+		final Json i18n = Industry.I18N.get("typeObject", "ideology", "list");
+		final Json data = Industry.DATA.get("typeObject", "ideology", "list");
 		for (final String key : data.keys()) {
 			new Ideology(key);
 		}

@@ -121,8 +121,8 @@ public class PlantType extends TypeObject {
 	static {
 		ALL_PLANT_TYPES_MAP = new HashMap<>();
 		ALL_PLANT_TYPES_LIST = new ArrayList<>();
-		final Json i18n = Industry.I18N.get("typeObject", "plantType");
-		final Json data = Industry.DATA.get("typeObject", "plantType");
+		final Json i18n = Industry.I18N.get("typeObject", "plantType", "list");
+		final Json data = Industry.DATA.get("typeObject", "plantType", "list");
 		for (final String key : data.keys()) {
 			final PlantType plantType = new PlantType(key);
 			plantType.name = i18n.get(key, "name").as(String.class);

@@ -164,8 +164,8 @@ public class KnowledgeField extends TypeObject {
 	static {
 		ALL_KNOWLEDGE_FIELDS_MAP = new HashMap<>();
 		ALL_KNOWLEDGE_FIELDS_LIST = new ArrayList<>();
-		final Json i18n = Industry.I18N.get("typeObject", "knowledgeField");
-		final Json data = Industry.DATA.get("typeObject", "knowledgeField");
+		final Json i18n = Industry.I18N.get("typeObject", "knowledgeField", "list");
+		final Json data = Industry.DATA.get("typeObject", "knowledgeField", "list");
 		for (final String key : data.keys()) {
 			final KnowledgeField knowledgeField = new KnowledgeField(key);
 			knowledgeField.name = i18n.get(key, "name").as(String.class);

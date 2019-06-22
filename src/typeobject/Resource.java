@@ -162,8 +162,8 @@ public class Resource extends TypeObject {
 		// Load all resource attributes
 		ALL_ATTRIBUTES_MAP = new HashMap<>();
 		ALL_ATTRIBUTES_LIST = new ArrayList<>();
-		final Json resourceAttributeI18n = Industry.I18N.get("typeObject", "resourceAttribute");
-		final Json resourceAttributeData = Industry.DATA.get("typeObject", "resourceAttribute");
+		final Json resourceAttributeI18n = Industry.I18N.get("typeObject", "resource", "attribute", "list");
+		final Json resourceAttributeData = Industry.DATA.get("typeObject", "resource", "attribute", "list");
 		for (final String key : resourceAttributeData.keys()) {
 			final ResourceAttribute resourceAttribute = new ResourceAttribute(key);
 			resourceAttribute.name = resourceAttributeI18n.get(key, "name").as(String.class);
@@ -172,8 +172,8 @@ public class Resource extends TypeObject {
 		// Load all resources
 		ALL_RESOURCES_MAP = new HashMap<>();
 		ALL_RESOURCES_LIST = new ArrayList<>();
-		final Json resourceI18n = Industry.I18N.get("typeObject", "resource");
-		final Json resourceData = Industry.DATA.get("typeObject", "resource");
+		final Json resourceI18n = Industry.I18N.get("typeObject", "resource", "list");
+		final Json resourceData = Industry.DATA.get("typeObject", "resource", "list");
 		for (final String resourceKey : resourceData.keys()) {
 			final Resource resource = new Resource(resourceKey);
 			resource.name = resourceI18n.get(resourceKey, "name").as(String.class);

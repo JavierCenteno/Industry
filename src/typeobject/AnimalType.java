@@ -86,8 +86,8 @@ public class AnimalType extends TypeObject {
 	static {
 		ALL_ANIMAL_TYPES_MAP = new HashMap<>();
 		ALL_ANIMAL_TYPES_LIST = new ArrayList<>();
-		final Json i18n = Industry.I18N.get("typeObject", "animalType");
-		final Json data = Industry.DATA.get("typeObject", "animalType");
+		final Json i18n = Industry.I18N.get("typeObject", "animalType", "list");
+		final Json data = Industry.DATA.get("typeObject", "animalType", "list");
 		for (final String key : data.keys()) {
 			final AnimalType animalType = new AnimalType(key);
 			animalType.name = i18n.get(key, "name").as(String.class);

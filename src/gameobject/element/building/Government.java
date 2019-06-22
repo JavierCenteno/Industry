@@ -327,14 +327,14 @@ public class Government extends Building implements Political {
 
 	static {
 		// i18n
-		final Json i18n = Industry.I18N.get("gameObject", "element", "building", "government");
+		final Json i18n = Industry.I18N.get("gameObject", "element", "building", "list", "government");
 		Government.NAME = i18n.get("name").as(String.class);
 		Government.DESCRIPTION = i18n.get("description").as(String.class);
 		GovernmentWorkmode.SERVE_THE_PEOPLE.name = i18n.get("workmodes", "serveThePeople", "name").as(String.class);
 		GovernmentWorkmode.SERVE_THE_PEOPLE.description = i18n.get("workmodes", "serveThePeople", "description")
 				.as(String.class);
 		// data
-		final Json data = Industry.DATA.get("gameObject", "element", "building", "government");
+		final Json data = Industry.DATA.get("gameObject", "element", "building", "list", "government");
 		Government.SIZE_X = data.get("sizeX").as(int.class);
 		Government.SIZE_Y = data.get("sizeY").as(int.class);
 		Government.MAX_ROUGHNESS = data.get("maxRoughness").as(int.class);

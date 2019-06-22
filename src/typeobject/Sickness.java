@@ -79,8 +79,8 @@ public class Sickness extends TypeObject {
 	static {
 		ALL_SICKNESSES_MAP = new HashMap<>();
 		ALL_SICKNESSES_LIST = new ArrayList<>();
-		final Json i18n = Industry.I18N.get("typeObject", "sickness");
-		final Json data = Industry.DATA.get("typeObject", "sickness");
+		final Json i18n = Industry.I18N.get("typeObject", "sickness", "list");
+		final Json data = Industry.DATA.get("typeObject", "sickness", "list");
 		for (final String key : data.keys()) {
 			final Sickness sickness = new Sickness(key);
 			sickness.name = i18n.get(key, "name").as(String.class);
