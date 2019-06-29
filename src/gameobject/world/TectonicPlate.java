@@ -22,9 +22,9 @@ import gameobject.GameObject;
 import gameobject.city.City;
 import gameobject.element.Element;
 import typeobject.AnimalType;
+import typeobject.MineralType;
 import typeobject.PlantType;
 import typeobject.SoilType;
-import util.amount.MineralDeposit;
 import util.integermatrix.IntegerMatrix;
 import util.integermatrix.ObjectMatrix;
 import util.integermatrix.SmallIntegerMatrix;
@@ -100,6 +100,10 @@ public class TectonicPlate extends GameObject {
 	 */
 	private final ObjectMatrix<SoilType> soilTypes;
 	/**
+	 * Grid of objects representing the mineral types in this plate.
+	 */
+	private final ObjectMatrix<MineralType> mineralTypes;
+	/**
 	 * Grid of objects representing the plant types in this plate.
 	 */
 	private final ObjectMatrix<PlantType> plantTypes;
@@ -107,10 +111,6 @@ public class TectonicPlate extends GameObject {
 	 * Grid of objects representing the animal types in this plate.
 	 */
 	private final ObjectMatrix<AnimalType> animalTypes;
-	/**
-	 * Grid of objects representing the mineral deposits types in this plate.
-	 */
-	private final ObjectMatrix<MineralDeposit> mineralDeposits;
 	/**
 	 * Grid of objects representing the elements in this plate.
 	 */
@@ -639,6 +639,20 @@ public class TectonicPlate extends GameObject {
 		}
 
 		/**
+		 * Get the mineral type in this tile.
+		 */
+		public MineralType getMineralType() {
+			return this.tectonicPlate.mineralTypes.get(this.x, this.y);
+		}
+
+		/**
+		 * Set the mineral type in this tile.
+		 */
+		public void setMineralType(final MineralType mineralType) {
+			this.tectonicPlate.mineralTypes.set(this.x, this.y, mineralType);
+		}
+
+		/**
 		 * Get the plant type in this tile.
 		 */
 		public PlantType getPlantType() {
@@ -664,20 +678,6 @@ public class TectonicPlate extends GameObject {
 		 */
 		public void setAnimalType(final AnimalType animalType) {
 			this.tectonicPlate.animalTypes.set(this.x, this.y, animalType);
-		}
-
-		/**
-		 * Get the mineral deposit in this tile.
-		 */
-		public MineralDeposit getMineralDeposit() {
-			return this.tectonicPlate.mineralDeposits.get(this.x, this.y);
-		}
-
-		/**
-		 * Set the mineral deposit in this tile.
-		 */
-		public void setMineralDeposit(final MineralDeposit mineralDeposit) {
-			this.tectonicPlate.mineralDeposits.set(this.x, this.y, mineralDeposit);
 		}
 
 		/**
@@ -732,9 +732,9 @@ public class TectonicPlate extends GameObject {
 		this.water = new SmallIntegerMatrix(tectonicPlateSize, tectonicPlateSize);
 		this.pollution = new SmallIntegerMatrix(tectonicPlateSize, tectonicPlateSize);
 		this.soilTypes = new SmallObjectMatrix<>(tectonicPlateSize, tectonicPlateSize);
+		this.mineralTypes = new SmallObjectMatrix<>(tectonicPlateSize, tectonicPlateSize);
 		this.plantTypes = new SmallObjectMatrix<>(tectonicPlateSize, tectonicPlateSize);
 		this.animalTypes = new SmallObjectMatrix<>(tectonicPlateSize, tectonicPlateSize);
-		this.mineralDeposits = new SmallObjectMatrix<>(tectonicPlateSize, tectonicPlateSize);
 		this.elements = new SmallObjectMatrix<>(tectonicPlateSize, tectonicPlateSize);
 	}
 
