@@ -110,9 +110,10 @@ public class FamilyUnit extends GameObject {
 		 * For every member in this family unit:
 		 *
 		 * If unemployed (except if child and child labor is banned) and there are job
-		 * openings that require studies, study for the available job openings. If there
-		 * are no job openings. look for a job. If found one, work and collect salary.
-		 * If not found one, try to continue studies anyway.
+		 * openings that require studies the member doesn't have, study for the
+		 * available job openings. If there are job openings, join the job. If there's a
+		 * job opening that pays better than current job, join it. If not found a job,
+		 * try to continue studies anyway.
 		 *
 		 * If employed, work and collect salary.
 		 *
