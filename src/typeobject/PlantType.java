@@ -67,11 +67,6 @@ public class PlantType extends TypeObject {
 	@Internationalized
 	private String description;
 	/**
-	 * The optimal temperature at which this plant can achieve maximum productivity.
-	 */
-	@Externalized
-	private int optimalTemperature;
-	/**
 	 * The minimum temperature this plant type can live on, also called frost
 	 * resistance.
 	 */
@@ -83,12 +78,6 @@ public class PlantType extends TypeObject {
 	 */
 	@Externalized
 	private int maximumTemperature;
-	/**
-	 * The optimal level of humidity at which this plant can achieve maximum
-	 * productivity.
-	 */
-	@Externalized
-	private int optimalHumidity;
 	/**
 	 * The minimum humidity this plant type can live on, also called drought
 	 * resistance.
@@ -127,6 +116,11 @@ public class PlantType extends TypeObject {
 			final PlantType plantType = new PlantType(key);
 			plantType.name = i18n.get(key, "name").as(String.class);
 			plantType.description = i18n.get(key, "description").as(String.class);
+			plantType.minimumTemperature = data.get(key, "minimumTemperature").as(int.class);
+			plantType.maximumTemperature = data.get(key, "maximumTemperature").as(int.class);
+			plantType.minimumHumidity = data.get(key, "minimumHumidity").as(int.class);
+			plantType.maximumHumidity = data.get(key, "maximumHumidity").as(int.class);
+			plantType.pollution = data.get(key, "pollution").as(int.class);
 			final Set<String> productionKeys = data.get(key, "production").keys();
 			plantType.production = new Amount[productionKeys.size()];
 			int index = 0;
@@ -210,13 +204,9 @@ public class PlantType extends TypeObject {
 			}
 		}
 		final int humidity = tile.getHumidity();
-		if ((plantType.minimumTemperature <= minimumTemperature)
-				&& (maximumTemperature <= plantType.maximumTemperature)) {
-			if ((plantType.minimumHumidity <= humidity) && (humidity <= plantType.maximumHumidity)) {
-				return true;
-			}
-		}
-		return false;
+		return (plantType.minimumTemperature <= minimumTemperature)
+				&& (maximumTemperature <= plantType.maximumTemperature) && (plantType.minimumHumidity <= humidity)
+				&& (humidity <= plantType.maximumHumidity);
 	}
 
 	/**
@@ -305,20 +295,12 @@ public class PlantType extends TypeObject {
 		return this.description;
 	}
 
-	public int getOptimalTemperature() {
-		return this.optimalTemperature;
-	}
-
 	public int getMinimumTemperature() {
 		return this.minimumTemperature;
 	}
 
 	public int getMaximumTemperature() {
 		return this.maximumTemperature;
-	}
-
-	public int getOptimalHumidity() {
-		return this.optimalHumidity;
 	}
 
 	public int getMinimumHumidity() {
