@@ -86,6 +86,71 @@ public class Policy extends TypeObject {
 	private Technology requiredTechnology;
 
 	////////////////////////////////////////////////////////////////////////////////
+	// Nested classes
+
+	/**
+	 * Contains references to the default policies.
+	 *
+	 * @author Javier Centeno Vega <jacenve@telefonica.net>
+	 * @version 0.1
+	 * @since 0.1
+	 *
+	 */
+	public static class Policies {
+
+		////////////////////////////////////////////////////////////////////////////////
+		// Class fields
+
+		public static final Policy AGRARIAN_REFORM = Policy.getPolicy("agrarianReform");
+		public static final Policy AGRARIAN_SUBSIDIES = Policy.getPolicy("agrarianSubsidies");
+		public static final Policy ANIMAL_WELFARE = Policy.getPolicy("animalWelfare");
+		public static final Policy ANTI_DETRACTION_LAW = Policy.getPolicy("antiDetractionLaw");
+		public static final Policy BABY_CHECK = Policy.getPolicy("babyCheck");
+		public static final Policy CHILDREN_RIGHTS = Policy.getPolicy("childrenRights");
+		public static final Policy COMPULSORY_EDUCATION = Policy.getPolicy("compulsoryEducation");
+		public static final Policy CONSCRIPTION = Policy.getPolicy("conscription");
+		public static final Policy CONTRACEPTION_BAN = Policy.getPolicy("contraceptionBan");
+		public static final Policy COPYRIGHT = Policy.getPolicy("copyright");
+		public static final Policy CURFEW = Policy.getPolicy("curfew");
+		public static final Policy DEATH_PENALTY_ABOLITION = Policy.getPolicy("deathPenaltyAbolition");
+		public static final Policy DEMOCRACY = Policy.getPolicy("democracy");
+		public static final Policy DRUG_CONTROL = Policy.getPolicy("drugControl");
+		public static final Policy ENCRYPTION_BAN = Policy.getPolicy("encryptionBan");
+		public static final Policy FAMILY_FRIENDLY_PROGRAMMING = Policy.getPolicy("familyFriendlyProgramming");
+		public static final Policy FAMILY_SIZE_LIMIT = Policy.getPolicy("familySizeLimit");
+		public static final Policy FOSSIL_FUEL_BAN = Policy.getPolicy("fossilFuelBan");
+		public static final Policy FREE_MARRIAGE = Policy.getPolicy("freeMarriage");
+		public static final Policy GAMBLING_BAN = Policy.getPolicy("gamblingBan");
+		public static final Policy GENETIC_MODIFICATION_BAN = Policy.getPolicy("geneticModificationBan");
+		public static final Policy GUN_CONTROL = Policy.getPolicy("gunControl");
+		public static final Policy HEALTHCARE_REFORM = Policy.getPolicy("healthcareReform");
+		public static final Policy HOUSING_REFORM = Policy.getPolicy("housingReform");
+		public static final Policy INDUSTRY_SUBSIDIES = Policy.getPolicy("industrySubsidies");
+		public static final Policy LEGAL_ABORTION = Policy.getPolicy("legalAbortion");
+		public static final Policy LEGAL_EUTHANASIA = Policy.getPolicy("legalEuthanasia");
+		public static final Policy LITTERING_BAN = Policy.getPolicy("litteringBan");
+		public static final Policy LOTTERY = Policy.getPolicy("lottery");
+		public static final Policy MARTIAL_LAW = Policy.getPolicy("martialLaw");
+		public static final Policy NATURAL_BORN_CITIZEN_PRIVILEGE = Policy.getPolicy("naturalBornCitizenPrivilege");
+		public static final Policy NET_NEUTRALITY = Policy.getPolicy("netNeutrality");
+		public static final Policy POLLUTION_TAX = Policy.getPolicy("pollutionTax");
+		public static final Policy PROHIBITION = Policy.getPolicy("prohibition");
+		public static final Policy PROSTITUTION_BAN = Policy.getPolicy("prostitutionBan");
+		public static final Policy REGULARIZATION = Policy.getPolicy("regularization");
+		public static final Policy RENEWABLE_ENERGY_SUBSIDIES = Policy.getPolicy("renewableEnergySubsidies");
+		public static final Policy RIGHT_TO_A_FAIR_TRIAL = Policy.getPolicy("rightToAFairTrial");
+		public static final Policy SMOKING_BAN = Policy.getPolicy("smokingBan");
+		public static final Policy SOCIAL_SECURITY = Policy.getPolicy("socialSecurity");
+		public static final Policy TARIFFS = Policy.getPolicy("tariffs");
+		public static final Policy TAX_CUT = Policy.getPolicy("taxCut");
+		public static final Policy UNION_BAN = Policy.getPolicy("unionBan");
+		public static final Policy UNIVERSAL_SUFFRAGE = Policy.getPolicy("universalSuffrage");
+		public static final Policy VACCINATION_CAMPAIGN = Policy.getPolicy("vaccinationCampaign");
+		public static final Policy WEALTH_TAX = Policy.getPolicy("wealthTax");
+
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
 	// Class initializer
 
 	/**
