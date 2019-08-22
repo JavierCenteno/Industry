@@ -18,8 +18,8 @@
 
 package util.amount;
 
-import typeobject.Resource;
-import typeobject.Resource.ResourceAttribute;
+import type.Resource;
+import type.Resource.ResourceAttribute;
 
 /**
  * This class represents a certain quantity of a certain resource.

@@ -16,57 +16,65 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package util.amount;
-
-import type.Resource;
+package type;
 
 /**
- * This class represents an amount that is canned and therefore does not decay.
+ * This class abstracts the idea of types. The instances of this class are
+ * inherent to this software itself and are loaded from memory whenever this
+ * software starts.
  *
  * @author Javier Centeno Vega <jacenve@telefonica.net>
  * @version 0.1
  * @since 0.1
  *
  */
-public class CannedAmount extends Amount {
+public abstract class Type {
+
+	////////////////////////////////////////////////////////////////////////////////
+	// Instance fields
+
+	/**
+	 * String identifying the id of this type.
+	 */
+	protected final int id;
 
 	////////////////////////////////////////////////////////////////////////////////
 	// Instance initializers
 
 	/**
-	 * Creates a new amount of the specified resource and quantity 0.
-	 *
-	 * @throws IllegalArgumentException
-	 *                                      When resource is null.
+	 * Creates a new type.
 	 */
-	public CannedAmount(final Resource resource) {
-		super(resource);
-	}
-
-	/**
-	 * Creates a new amount of the specified resource and the specified quantity.
-	 *
-	 * @throws IllegalArgumentException
-	 *                                      When resource is null or quantity is
-	 *                                      negative.
-	 */
-	public CannedAmount(final Resource resource, final int quantity) {
-		super(resource, quantity);
-	}
-
-	/**
-	 * Creates a new canned amount based on the amount passed as an argument.
-	 */
-	public CannedAmount(final Amount amount) {
-		super(amount.resource, amount.quantity);
+	public Type(final int id) {
+		this.id = id;
 	}
 
 	////////////////////////////////////////////////////////////////////////////////
 	// Instance methods
 
 	@Override
-	public void tick() {
-		// Canned resources do not perish, so do nothing
+	public int hashCode() {
+		return this.id;
+	}
+
+	@Override
+	public boolean equals(final Object object) {
+		if (object.getClass().equals(this.getClass())) {
+			return ((Type) object).getId() == this.getId();
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public String toString() {
+		return this.getClass().getName() + "#" + this.getId();
+	}
+
+	/**
+	 * Get the id of this type.
+	 */
+	public final long getId() {
+		return this.id;
 	}
 
 }

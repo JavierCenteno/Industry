@@ -16,49 +16,29 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package util.amount;
+package entity.event.trigger;
 
-import type.Resource;
+import entity.world.World;
+import util.idate.IDate;
 
 /**
- * This class represents an amount that is canned and therefore does not decay.
+ * This class causes olympic games.
  *
  * @author Javier Centeno Vega <jacenve@telefonica.net>
  * @version 0.1
  * @since 0.1
  *
  */
-public class CannedAmount extends Amount {
+public class OlympicGamesTrigger extends EventTrigger {
+
+	////////////////////////////////////////////////////////////////////////////////
+	// Instance fields
 
 	////////////////////////////////////////////////////////////////////////////////
 	// Instance initializers
 
-	/**
-	 * Creates a new amount of the specified resource and quantity 0.
-	 *
-	 * @throws IllegalArgumentException
-	 *                                      When resource is null.
-	 */
-	public CannedAmount(final Resource resource) {
-		super(resource);
-	}
-
-	/**
-	 * Creates a new amount of the specified resource and the specified quantity.
-	 *
-	 * @throws IllegalArgumentException
-	 *                                      When resource is null or quantity is
-	 *                                      negative.
-	 */
-	public CannedAmount(final Resource resource, final int quantity) {
-		super(resource, quantity);
-	}
-
-	/**
-	 * Creates a new canned amount based on the amount passed as an argument.
-	 */
-	public CannedAmount(final Amount amount) {
-		super(amount.resource, amount.quantity);
+	public OlympicGamesTrigger(final World world) {
+		super(world);
 	}
 
 	////////////////////////////////////////////////////////////////////////////////
@@ -66,7 +46,12 @@ public class CannedAmount extends Amount {
 
 	@Override
 	public void tick() {
-		// Canned resources do not perish, so do nothing
+		final IDate date = this.getWorld().getDate();
+		final int year = date.getYear();
+		final int month = date.getMonth();
+		if ((month == IDate.JUNE) && (year >= 1900) && ((year % 4) == 0)) {
+			// TODO: Olympics start!
+		}
 	}
 
 }

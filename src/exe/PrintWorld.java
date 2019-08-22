@@ -27,12 +27,12 @@ import java.math.BigInteger;
 
 import javax.imageio.ImageIO;
 
+import entity.world.World;
+import entity.world.TectonicPlate.Tile;
 import exe.io.FileHandler;
-import gameobject.world.TectonicPlate.Tile;
-import gameobject.world.World;
 import generator.BasicGenerator;
-import typeobject.Era;
-import typeobject.TerrainShape;
+import type.Era;
+import type.TerrainShape;
 import util.math.IMath;
 
 /**
@@ -96,7 +96,7 @@ public class PrintWorld {
 		if (crustThicknessFactorString.isEmpty()) {
 			crustThicknessFactor = 1.0d;
 		} else {
-			crustThicknessFactor = Integer.parseInt(crustThicknessFactorString);
+			crustThicknessFactor = Double.parseDouble(crustThicknessFactorString);
 		}
 		System.out.println("Input a sea level factor or press enter to pick a default value.");
 		double seaLevelFactor;
@@ -104,7 +104,7 @@ public class PrintWorld {
 		if (seaLevelFactorString.isEmpty()) {
 			seaLevelFactor = 1.0d;
 		} else {
-			seaLevelFactor = Integer.parseInt(seaLevelFactorString);
+			seaLevelFactor = Double.parseDouble(seaLevelFactorString);
 		}
 		System.out.println("Input a roughness factor or press enter to pick a default value.");
 		double roughnessFactor;
@@ -112,7 +112,7 @@ public class PrintWorld {
 		if (roughnessFactorString.isEmpty()) {
 			roughnessFactor = 8.0d;
 		} else {
-			roughnessFactor = Integer.parseInt(roughnessFactorString);
+			roughnessFactor = Double.parseDouble(roughnessFactorString);
 		}
 		System.out.println("Input an axis tilt or press enter to pick a default value.");
 		double axisTilt;
@@ -120,7 +120,7 @@ public class PrintWorld {
 		if (axisTiltString.isEmpty()) {
 			axisTilt = 0.15d;
 		} else {
-			axisTilt = Integer.parseInt(axisTiltString);
+			axisTilt = Double.parseDouble(axisTiltString);
 		}
 		System.out.println("Input a distance to sun factor or press enter to pick a default value.");
 		double distanceToSunFactor;
@@ -128,7 +128,7 @@ public class PrintWorld {
 		if (distanceToSunFactorString.isEmpty()) {
 			distanceToSunFactor = 1.0d;
 		} else {
-			distanceToSunFactor = Integer.parseInt(distanceToSunFactorString);
+			distanceToSunFactor = Double.parseDouble(distanceToSunFactorString);
 		}
 		System.out.println("Input a playable area size exponent or press enter to pick a default value.");
 		int playableSizeExponent;

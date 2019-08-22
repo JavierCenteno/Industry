@@ -16,49 +16,28 @@
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package util.amount;
+package entity.event.trigger;
 
-import type.Resource;
+import entity.world.World;
 
 /**
- * This class represents an amount that is canned and therefore does not decay.
+ * This class causes earthquakes inside a terrain.
  *
  * @author Javier Centeno Vega <jacenve@telefonica.net>
  * @version 0.1
  * @since 0.1
  *
  */
-public class CannedAmount extends Amount {
+public class LocalEarthquakeTrigger extends EventTrigger {
+
+	////////////////////////////////////////////////////////////////////////////////
+	// Instance fields
 
 	////////////////////////////////////////////////////////////////////////////////
 	// Instance initializers
 
-	/**
-	 * Creates a new amount of the specified resource and quantity 0.
-	 *
-	 * @throws IllegalArgumentException
-	 *                                      When resource is null.
-	 */
-	public CannedAmount(final Resource resource) {
-		super(resource);
-	}
-
-	/**
-	 * Creates a new amount of the specified resource and the specified quantity.
-	 *
-	 * @throws IllegalArgumentException
-	 *                                      When resource is null or quantity is
-	 *                                      negative.
-	 */
-	public CannedAmount(final Resource resource, final int quantity) {
-		super(resource, quantity);
-	}
-
-	/**
-	 * Creates a new canned amount based on the amount passed as an argument.
-	 */
-	public CannedAmount(final Amount amount) {
-		super(amount.resource, amount.quantity);
+	public LocalEarthquakeTrigger(final World world) {
+		super(world);
 	}
 
 	////////////////////////////////////////////////////////////////////////////////
@@ -66,7 +45,13 @@ public class CannedAmount extends Amount {
 
 	@Override
 	public void tick() {
-		// Canned resources do not perish, so do nothing
+		/*
+		 * TODO: the likelihood and strenght of earthquakes in a pair of plates is
+		 * proportional to how different the movement vectors (magma flow) between the
+		 * two plates are. Earthquakes damage all elements in the plates where they
+		 * happen, with maximum damage in the plates where it happened and decreasing
+		 * damage in more distant plates.
+		 */
 	}
 
 }

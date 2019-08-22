@@ -18,10 +18,10 @@
 
 package generator;
 
-import gameobject.world.TectonicPlate;
-import gameobject.world.TectonicPlate.Tile;
-import gameobject.world.Terrain.TectonicPlateIterable.TectonicPlateIterator;
-import gameobject.world.World;
+import entity.world.TectonicPlate;
+import entity.world.World;
+import entity.world.TectonicPlate.Tile;
+import entity.world.Terrain.TectonicPlateIterable.TectonicPlateIterator;
 
 /**
  * This class defines a basic map generator.
